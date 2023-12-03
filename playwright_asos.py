@@ -5,9 +5,10 @@ import playwright_meta
 import self_email
 # Template for websites using playwright_meta
 subject = 'Test Email'
-body = 'This is a test email sent from a Python script.'
+body = 'This is a test email sent from a Python script. Item is in stock!'
 sender_email = input('your_email@gmail.com ')
 sender_password = input('your_generated_app_gmail_password ')
+countdown=60*15 # 60 seconds*15= 15 minutes, this script checks stock every 15 minutes.
 
 url2='https://www.asos.com/api/product/catalogue/v4/stockprice?productIds=205495961&store=COM&currency=GBP&keyStoreDataversion=h7g0xmn-38&country=GB'
 COOKIE_KEY = None
@@ -38,15 +39,14 @@ def check_stock():
             COOKIE_KEY, COOKIE_VALUE=get_cookies()
         else:
             data = req_with_cookie(COOKIE_KEY, COOKIE_VALUE)
-            print("stockLastUpdatedDate "+data[0]['variants'][0]['stockLastUpdatedDate'])
-            isInStock=str(data[0]['variants'][0]['isInStock'])
+            # print(data) # use this if you want to see where the variable you need to find is located
+            isInStock=str(data[0]['variants'][0]['isInStock']) # change this to select and parse the data/variable you need
             print("isInStock "+isInStock)
-            # print(data)
             if isInStock == 'True':
                 self_email.send_email(subject, body, sender_email, sender_password)
             else:
                 pass
-            time.sleep(30*60)
+            time.sleep(countdown)
 
 if __name__ == '__main__':
     check_stock()

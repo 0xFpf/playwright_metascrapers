@@ -1,7 +1,8 @@
 from playwright.sync_api import sync_playwright
 import time
 
-# A meta script to automatically pull cookies and make a data request for json file using playwright, currently tested with Asos shop
+# A meta script to automatically pull cookies and make a data request for json file using playwright,
+# Requires a bit of trial and error finding the right request to get the data you want and get the right cookie
 
 url='https://www.asos.com/asos-design/'
 cookie_location=3

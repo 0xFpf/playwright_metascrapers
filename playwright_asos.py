@@ -2,11 +2,12 @@ from playwright.sync_api import sync_playwright
 import requests
 import time
 import playwright_meta
+import self_email
 # Template for websites using playwright_meta
 subject = 'Test Email'
 body = 'This is a test email sent from a Python script.'
-sender_email = 'your_email@gmail.com'
-sender_password = 'your_email_password'
+sender_email = input('your_email@gmail.com ')
+sender_password = input('your_generated_app_gmail_password ')
 
 url2='https://www.asos.com/api/product/catalogue/v4/stockprice?productIds=205495961&store=COM&currency=GBP&keyStoreDataversion=h7g0xmn-38&country=GB'
 COOKIE_KEY = None
@@ -38,8 +39,13 @@ def check_stock():
         else:
             data = req_with_cookie(COOKIE_KEY, COOKIE_VALUE)
             print("stockLastUpdatedDate "+data[0]['variants'][0]['stockLastUpdatedDate'])
-            print("isInStock "+str(data[0]['variants'][0]['isInStock']))
+            isInStock=str(data[0]['variants'][0]['isInStock'])
+            print("isInStock "+isInStock)
             # print(data)
+            if isInStock == 'True':
+                self_email.send_email(subject, body, sender_email, sender_password)
+            else:
+                pass
             time.sleep(30*60)
 
 if __name__ == '__main__':

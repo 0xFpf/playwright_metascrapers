@@ -3,6 +3,10 @@ import requests
 import time
 import playwright_meta
 # Template for websites using playwright_meta
+subject = 'Test Email'
+body = 'This is a test email sent from a Python script.'
+sender_email = 'your_email@gmail.com'
+sender_password = 'your_email_password'
 
 url2='https://www.asos.com/api/product/catalogue/v4/stockprice?productIds=205495961&store=COM&currency=GBP&keyStoreDataversion=h7g0xmn-38&country=GB'
 COOKIE_KEY = None

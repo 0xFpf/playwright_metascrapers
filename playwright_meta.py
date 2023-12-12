@@ -14,13 +14,11 @@ def get_cookie_playwright():
         context = browser.new_context()
         page = context.new_page()
         page.goto(url)
-        time.sleep(5)
+        time.sleep(3)
         page.locator("'"+accept_cookies_name+"'").click()
-        # page.click("button.L2AGLb")
-        # pprint(context.cookies())
         cookie_value = context.cookies()[cookie_location]['value']
         cookie_key= context.cookies()[cookie_location]['name']
-        print("Key of cookie: "+cookie_key)
-        print("Value of cookie: "+cookie_value)
+        # print("Key of cookie: "+cookie_key)
+        # print("Value of cookie: "+cookie_value)
         browser.close()
     return cookie_key, cookie_value

@@ -17,6 +17,7 @@ You could make a function to rotate cookie indexes until you get the right one i
 
 I also have attached a template file *playwright_asos* which is where *main* is. 
 I used for the Asos website, you can more or less keep the same template and use it for whatever website. The variables you can change are:
+
 >*all email variables at the top* self explanatory, it's to make the gmail notification work
 
 >*url2* this is the specific Get request call.

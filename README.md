@@ -20,7 +20,7 @@ On the **playwright_meta.py** you need to change the variables *url*, *cookie_lo
 
 >*Accept_cookies_name* : needs to be equal to the text in the button to accept cookies that opens up once you start the script. In this instance to accept the cookies I need to click on a button that says "That's ok".
 
-I also have attached a template file **playwright_asos** which is where the *main* function is. 
+I also have attached a template file **playwright_asos.py** which is where the *main* function is. 
 I used this for the Asos website, you can more or less keep the same template and use it for whatever website. 
 
 The variables you can change are:

@@ -10,6 +10,7 @@ class TestPlaywrightMeta(unittest.TestCase):
         accept_cookies_name="That's ok"
         # Get cookie_key and cookie_value so you can run asserts on them
         cookie_key, cookie_value = playwright_meta.get_cookie_playwright()
+        # Tests
         self.assertIsNotNone(cookie_key)
         self.assertIsNotNone(cookie_value)
         self.assertNotEqual(cookie_key, '')

@@ -7,12 +7,12 @@ Websites make several GET requests and have several cookies, so you have to go t
 
 (Please Note: I made an assumption that the data you seek will most likely be of JSON type, but some websites have different response types such as XML, in the network tab to find the call you want to make.)
 
-First you'll want to find the right Get request call you want, then try to run it with several cookies until you get one that gives your Response 200 (as well as the data you're looking for).
+First you'll want to find the right GET request call you want, then try to run it with several cookies until you get one that gives your Response 200 (as well as the data you're looking for).
 You could make a function to rotate cookie indexes until you get the right one if you wanted to automate that bit.
 
 Instructions for use:
 
-On the playwright_meta.py you need to change the variables *url*, *cookie_location* and *accept_cookies_name*.
+On the **playwright_meta.py** you need to change the variables *url*, *cookie_location* and *accept_cookies_name*.
 
 >*Url* : will be the url of the website you want the cookie of, any url should be fine so long as you can get cookies from it, if the script doesn't work you may want to try the url at the home page level (ie. https://website.com/home).
 
@@ -20,7 +20,7 @@ On the playwright_meta.py you need to change the variables *url*, *cookie_locati
 
 >*Accept_cookies_name* : needs to be equal to the text in the button to accept cookies that opens up once you start the script. In this instance to accept the cookies I need to click on a button that says "That's ok".
 
-I also have attached a template file *playwright_asos* which is where the *main* function is. 
+I also have attached a template file **playwright_asos** which is where the *main* function is. 
 I used this for the Asos website, you can more or less keep the same template and use it for whatever website. 
 
 The variables you can change are:
